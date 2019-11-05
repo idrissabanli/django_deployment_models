@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+4i%gm0k_rd!r-1=zi3x!(sn)r2-dg4fg(!p_igz#s@la)j)q5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -128,9 +128,13 @@ USE_TZ = True
 # bu ise static fayllarin istifadeciye gosterdiyimiz unvanidir
 STATIC_URL = '/static/'
 # bu static fayllarin heqiqi unvanidir
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static")
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 # istifadecilere gorsenecek olan url
 MEDIA_URL = '/media/'
 
