@@ -16,3 +16,13 @@ services:
       MYSQL_USER: deploy_db_user
       MYSQL_PASSWORD: Myw8VVn8oOPzldO2dis6pyrAb
 
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx.conf:/etc/nginx/conf
+
