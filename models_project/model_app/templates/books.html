@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    {% for book in books %}
+        {{ book.title|upper }}<br>
+    {% endfor %}
+
+    <div class="pagination">
+        <span class="step-links">
+            <!-- {% if books.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ books.previous_page_number }}">previous</a>
+            {% endif %} -->
+            {% for number in books.paginator.page_range %}
+            {% if books.number is number %}
+                {{ number }}
+                {% else %}
+                <a href="?page={{ number }}">{{ number }}</a>
+            {% endif %}
+
+            {% endfor %}
+            <!-- <span class="current">
+                Page  of {{ books.paginator.num_pages }}.
+            </span> -->
+    
+            <!-- {% if books.has_next %}
+                <a href="?page={{ books.next_page_number }}">next</a>
+                <a href="?page={{ books.paginator.num_pages }}">last &raquo;</a>
+            {% endif %} -->
+        </span>
+    </div>
+</body>
+</html>

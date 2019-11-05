@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    name: {{ object.name }}
+    nickname: {{ person.nickname }}
+    <img src="{{ person.avatar.url }}" alt="">
+
+    <a href="{% url 'model_app:update-blogger' person.id %}">update</a>
+    <a href="{% url 'model_app:delete-blogger' person.id %}">delete</a>
+
+    {% for video in person.get_videos %}
+
+    video {{forloop.counter}}: {{video.title}}
+    {% endfor %}
+    
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Yarat">
+    </form>
+</body>
+</html>
