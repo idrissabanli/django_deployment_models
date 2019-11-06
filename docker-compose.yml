@@ -24,5 +24,6 @@ services:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./nginx.conf:/etc/nginx/conf
+      - ./static/:/models_project/static
+      - ./media/:/models_project/media
 
