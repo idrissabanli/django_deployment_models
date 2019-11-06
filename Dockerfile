@@ -30,4 +30,4 @@ EXPOSE 8000
 RUN if [ -f manage.py ]; then /venv/bin/python manage.py collectstatic --noinput; fi
 
 # Start gunicorn
-CMD [ "/venv/bin/gunicorn", "--bind", "0.0.0.0", "-p", "8000", "code.models_project.wsgi"]
+CMD [ "/venv/bin/gunicorn", "--bind", "0.0.0.0", "-p", "8000", "models_project.models_project.wsgi"]
