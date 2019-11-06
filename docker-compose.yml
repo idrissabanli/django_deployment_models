@@ -23,7 +23,5 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./static/:/models_project/static
-      - ./media/:/models_project/media
+      - .:app
 
