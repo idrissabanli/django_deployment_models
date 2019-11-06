@@ -23,5 +23,33 @@ services:
     ports:
       - "80:80"
     volumes:
-      - .:app
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx/vhost/:/etc/nginx/vhost.d:ro
+      - ./nginx/conf.d/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
+      - ./static/:/models_project/static
+      - ./media/:/models_project/media
+
+  web:
+    container_name: models_project
+    build: .
+    restart: "always"
+    env_file: .env
+    environment:
+      # - VIRTUAL_HOST=dragro.az
+      - VIRTUAL_PORT=8000
+      - TIMEOUT=300
+      - HTTP_PORT=8000
+      - STATS_PORT=8001
+      - LANG=C.UTF-8
+      - LANG en_US.UTF-8
+      - LANGUAGE en_US:en
+      - LC_ALL en_US.UTF-8
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    depends_on:
+      - "db"
 

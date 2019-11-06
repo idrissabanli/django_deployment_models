@@ -1,0 +1,7 @@
+location /static/ {
+    alias   /models_project/static/;
+}
+
+location /media/ {
+    alias   /models_project/media/;
+}
