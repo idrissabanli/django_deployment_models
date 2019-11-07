@@ -82,8 +82,8 @@ DATABASES = {
         'NAME': 'deploy_db_name',
         'USER': 'deploy_db_user',
         'PASSWORD': 'Myw8VVn8oOPzldO2dis6pyrAb',
-        'HOST': '127.0.0.1',
-        # 'PORT': 3306,
+        'HOST': 'db',
+        'PORT': "3306",
     }
 }
 
