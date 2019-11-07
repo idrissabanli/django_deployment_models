@@ -1,7 +1,7 @@
 location /static/ {
-    alias   /models_project/static/;
+    alias   /static/;
 }
 
 location /media/ {
-    alias   /models_project/media/;
+    alias   /media/;
 }
