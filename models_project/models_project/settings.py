@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+4i%gm0k_rd!r-1=zi3x!(sn)r2-dg4fg(!p_igz#s@la)j)q5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'deploy_db_name',
         'USER': 'deploy_db_user',
         'PASSWORD': 'Myw8VVn8oOPzldO2dis6pyrAb',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 3306,
     }
 }
