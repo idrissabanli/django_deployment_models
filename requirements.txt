@@ -1,6 +1,6 @@
 backcall==0.1.0
 decorator==4.4.0
-Django==2.2.8
+Django==2.2.21
 django-jet==1.0.8
 gunicorn==19.9.0
 ipython==7.8.0
